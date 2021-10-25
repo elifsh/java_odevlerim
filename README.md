@@ -13,15 +13,15 @@ public class dersjava
         x=klavye.nextDouble();
         if (x<0) 
         {
-            y = 2/3*Math.abs(x-1);   
+            y = 2.0/3.0*Math.abs(x-1);   
         }
         else if (x>0)
         {
-            y = 2/3*Math.abs(x+1);
+            y = 2.0/3.0*Math.abs(x+1);
         }
         else
         {
-            y = Math.sqrt(2/3);
+            y = Math.sqrt(2.0/3.0);
         }
         System.out.println("Fonksiyon Sonucu:" + y);
         klavye.close();
