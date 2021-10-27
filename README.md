@@ -29,7 +29,7 @@ public class dersjava
     
 }
 ```
-#### 1-)Bir ondalık sayı (x) giren ve aşağıdaki formüle göre sonucu (y) bularak çıktıda veren programı yazınız.
+#### 2-)Bir ondalık sayı (x) giren ve aşağıdaki formüle göre sonucu (y) bularak çıktıda veren programı yazınız.
 ```
 import java.util.*;
 public class dersjava 
@@ -49,6 +49,39 @@ public class dersjava
         klavye.close();
     }
     
+}
+```
+#### 3-)x'in sıfırdan büyük veya sıfıra küçük eşit olma durumuna göre belirli f(x) ve g(x) fonksiyonlarının ekrana çıktılarını veren programı yazınız.
+```
+import java.util.*;
+public class App 
+{
+    public static void main(String[] args) throws Exception 
+    {   
+        double x, fx, gx;
+        Scanner klavye = new Scanner(System.in);
+        System.out.println("Lütfen bir adet sayı giriniz:");
+        x=klavye.nextInt();
+
+        if (x>0) 
+        {
+            fx = 1.0/(1.0+x);
+            gx = 1.0/((x*x)+1.0);
+
+            System.out.println("f(x) değeriniz:" + fx);
+            System.out.println("g(x) değeriniz:" + gx);
+        }
+
+        else if (x<=0) 
+        {
+            fx = 1.0/(1.0+(x*x));
+            gx = 1.0/(1.0+x+(x*x)+(x*x*x));
+
+            System.out.println("f(x) değeriniz:" + fx);
+            System.out.println("g(x) değeriniz:" + gx);
+        }
+        klavye.close();
+    }
 }
 ```
 
