@@ -84,5 +84,37 @@ public class App
     }
 }
 ```
+#### 4-)Girilen x değerlerine göre fx değerini hesaplayan programı yazınız.
+```
+import java.util.*;
+public class App 
+{
+    public static void main(String[] args) throws Exception 
+    {   
+        double x, fx;
+        Scanner klavye = new Scanner(System.in);
+        System.out.print("Lütfen bir sayı giriniz:");
+        x = klavye.nextDouble();
 
+        if (x<10) 
+        {
+            fx = Math.abs(x);
+        }        
+        else if (x >= 10.0 && x<100.0) 
+        {
+            fx = 3.0/(2.0*x*x);
+        }        
+        else 
+        {
+        fx = Math.pow((x-10.0),2.0)/Math.pow(x,3.0); 
+
+        }
+        System.out.println("f(x) fonksiyonunun değeri:" + fx);
+                
+        
+
+        klavye.close();
+    }
+}
+```
 
