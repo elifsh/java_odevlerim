@@ -1,6 +1,7 @@
-# java_odevlerim
-#### 1-)Math işlevlerini kullanarak parçalı işlevi hesaplayan bir program yazın
-```
+# Java Ödevlerim
+## 1.1 Math işlevlerini kullanarak parçalı işlevi hesaplayan bir program yazın
+
+```java
 import java.util.*;
 public class dersjava 
 {
@@ -29,8 +30,10 @@ public class dersjava
     
 }
 ```
-#### 2-)Bir ondalık sayı (x) giren ve aşağıdaki formüle göre sonucu (y) bularak çıktıda veren programı yazınız.
-```
+
+## 1.2 Bir ondalık sayı (x) giren ve aşağıdaki formüle göre sonucu (y) bularak çıktıda veren programı yazınız.
+
+```java
 import java.util.*;
 public class dersjava 
 {
@@ -51,8 +54,10 @@ public class dersjava
     
 }
 ```
-#### 3-)x'in sıfırdan büyük veya sıfıra küçük eşit olma durumuna göre belirli f(x) ve g(x) fonksiyonlarının ekrana çıktılarını veren programı yazınız.
-```
+
+## 1.3 x'in sıfırdan büyük veya sıfıra küçük eşit olma durumuna göre belirli f(x) ve g(x) fonksiyonlarının ekrana çıktılarını veren programı yazınız.
+
+```java
 import java.util.*;
 public class App 
 {
@@ -84,8 +89,10 @@ public class App
     }
 }
 ```
-#### 4-)Girilen x değerlerine göre fx değerini hesaplayan programı yazınız.
-```
+
+## 1.4 Girilen x değerlerine göre fx değerini hesaplayan programı yazınız.
+
+```java
 import java.util.*;
 public class App 
 {
@@ -117,4 +124,3 @@ public class App
     }
 }
 ```
-
