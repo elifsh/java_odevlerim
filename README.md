@@ -112,7 +112,7 @@ public class Main
 }
 
 ```
-## 1.5-)Bir bankada yapılan harcamaya göre kazanılan ekstra puanı hesaplayan bir program yazılacaktır.Program ilk olarak kullanıcıdan toplam harcama miktarını alacaktır.Bu miktara göre kazanılan puan aşağıdaki gibi hesaplanacaktır:
+## 1.5 Bir bankada yapılan harcamaya göre kazanılan ekstra puanı hesaplayan bir program yazılacaktır.Program ilk olarak kullanıcıdan toplam harcama miktarını alacaktır.Bu miktara göre kazanılan puan aşağıdaki gibi hesaplanacaktır:
 ```
 --->Toplam harcama 250den küçük ise her 50 TL başına 10p
 --->Toplam harcama 250 ve 500 arasında ise her 50 TL başına 15p
