@@ -1,119 +1,166 @@
 # java_odevlerim
 #### 1-)Math işlevlerini kullanarak parçalı işlevi hesaplayan bir program yazın
-```
-import java.util.*;
-public class dersjava 
-{
-    public static void main(String[] args) 
-    {
-        
-        double x, y;
+```java
+import java.util.Scanner;
+import java.lang.Math;
 
-        Scanner klavye = new Scanner(System.in);
-        x=klavye.nextDouble();
-        if (x<0) 
-        {
-            y = 2.0/3.0*Math.abs(x-1);   
+public class Main
+{
+    public static void main(String[] args) {
+        double y;
+        double two_thirds = 2.0 / 3.0;
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Lütfen bir adet x değeri giriniz: ");
+        double x = sc.nextDouble();
+        sc.close();
+
+        if (x < 0) {
+            y = two_thirds * Math.abs(x-1);
+        } else if (x > 0) {
+            y = two_thirds * Math.abs(x+1);
+        } else {
+            y = Math.sqrt(two_thirds);
         }
-        else if (x>0)
-        {
-            y = 2.0/3.0*Math.abs(x+1);
-        }
-        else
-        {
-            y = Math.sqrt(2.0/3.0);
-        }
-        System.out.println("Fonksiyon Sonucu:" + y);
-        klavye.close();
+
+        System.out.println("Fonksiyon Sonucu: " + y);
     }
-    
 }
+
 ```
 #### 2-)Bir ondalık sayı (x) giren ve aşağıdaki formüle göre sonucu (y) bularak çıktıda veren programı yazınız.
-```
-import java.util.*;
-public class dersjava 
-{
-    public static void main(String[] args) 
-    {
-        
-        double x, y;
-        
-        System.out.println("1 adet x sayısı giriniz:");
-        Scanner klavye = new Scanner(System.in);
-        x=klavye.nextDouble();
+```java
+import java.util.Scanner;
+import java.lang.Math;
 
-        y=x-(Math.pow(x, 3.0)/3*2) + (Math.pow(x, 5.0)/5*4*3*2) - (Math.pow(x, 7.0)/7*6*5*4*3*2);
+public class Main
+{
+    public static void main(String[] args) {
+        double y;
         
-        System.out.println("Fonksiyon Sonucu:" + y);
-        klavye.close();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("1 adet x sayısı giriniz: ");
+        double x = sc.nextDouble();
+        sc.close();
+
+        y = x - Math.pow(x, 3)/6 + Math.pow(x, 5)/120 - Math.pow(x, 7)/5040;
+
+        System.out.println("Fonksiyon Sonucu: " + y);
     }
-    
-}
+} 
 ```
 #### 3-)x'in sıfırdan büyük veya sıfıra küçük eşit olma durumuna göre belirli f(x) ve g(x) fonksiyonlarının ekrana çıktılarını veren programı yazınız.
-```
-import java.util.*;
-public class App 
+```java
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main
 {
-    public static void main(String[] args) throws Exception 
-    {   
-        double x, fx, gx;
-        Scanner klavye = new Scanner(System.in);
-        System.out.println("Lütfen bir adet sayı giriniz:");
-        x=klavye.nextInt();
+    public static void main(String[] args) {
+        double fx, gx;
 
-        if (x>0) 
-        {
-            fx = 1.0/(1.0+x);
-            gx = 1.0/((x*x)+1.0);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Lütfen bir adet sayı giriniz: ");
+        double x = sc.nextInt();
+        sc.close();
 
-            System.out.println("f(x) değeriniz:" + fx);
-            System.out.println("g(x) değeriniz:" + gx);
+        double f = 1.0 / (1.0 + Math.pow(x, 2));
+
+        if (x > 0) {
+            fx = 1.0 / (1.0 + x);
+            gx = f;
+        } else {
+            fx = f;
+            gx = 1.0 / (f + x + Math.pow(x, 3));
         }
 
-        else if (x<=0) 
-        {
-            fx = 1.0/(1.0+(x*x));
-            gx = 1.0/(1.0+x+(x*x)+(x*x*x));
-
-            System.out.println("f(x) değeriniz:" + fx);
-            System.out.println("g(x) değeriniz:" + gx);
-        }
-        klavye.close();
+        System.out.printf("f(%.2f) = %f\n", x, fx);
+        System.out.printf("g(%.2f) = %f\n", x, gx);
     }
 }
 ```
 #### 4-)Girilen x değerlerine göre fx değerini hesaplayan programı yazınız.
+```java
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main
+{
+    public static void main(String[] args) throws Exception {
+        double fx;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Lütfen bir sayı giriniz: ");
+        double x = sc.nextDouble();
+        sc.close();
+
+        if (x < 10) 
+        {
+            fx = Math.abs(x);
+        } 
+        else if (x >= 10.0 && x < 100.0) 
+        {
+            fx = 3.0 / (2.0 * Math.pow(x, 2));
+        } 
+        else 
+        {
+            fx = Math.pow(x-10, 2) / Math.pow(x, 3);
+        }
+
+        System.out.printf("f(%.2f) = %.10f", x, fx);
+    }
+}
+
 ```
+#### 5-)Bir bankada yapılan harcamaya göre kazanılan ekstra puanı hesaplayan bir program yazılacaktır.Program ilk olarak kullanıcıdan toplam harcama miktarını alacaktır.Bu miktara göre kazanılan puan aşağıdaki gibi hesaplanacaktır:
+```
+--->Toplam harcama 250den küçük ise her 50 TL başına 10p
+--->Toplam harcama 250 ve 500 arasında ise her 50 TL başına 15p
+--->Toplam harcama 500den büyük ise her 50 TL başına 20p
+```
+Kazanılan puan kullanıcıya iletildikten sonra bu miktarı TEMA vakfına bağış yapabileceği hakkında bilgi iletilecek.Gelen cevaba göre puan miktarı bağışlanacaktır.
+```java
 import java.util.*;
-public class App 
+public class Main 
 {
     public static void main(String[] args) throws Exception 
     {   
-        double x, fx;
+        int top_harcama, puan;
+        String karar;
+
         Scanner klavye = new Scanner(System.in);
-        System.out.print("Lütfen bir sayı giriniz:");
-        x = klavye.nextDouble();
+        System.out.print("Lütfen bankamızda şu zamana kadar yapmış olduğunuz toplam harcamayı giriniz:");
+        top_harcama = klavye.nextInt();
 
-        if (x<10) 
+        if (top_harcama < 250) 
         {
-            fx = Math.abs(x);
-        }        
-        else if (x >= 10.0 && x<100.0) 
-        {
-            fx = 3.0/(2.0*x*x);
-        }        
-        else 
-        {
-        fx = Math.pow((x-10.0),2.0)/Math.pow(x,3.0); 
-
+            puan = (top_harcama/50)*10;
         }
-        System.out.println("f(x) fonksiyonunun değeri:" + fx);
-                
-        
+        else if (top_harcama > 250 && top_harcama<500 ) 
+        {
+            puan = (top_harcama/50)*15;
+        }
+        else
+        {
+            puan = (top_harcama/50)*20;
+        }
+       
+        System.out.println("Kazandığınız miktar:" + puan + "TL'dir.Bu miktar ile TEMA vakfına bağışta bulunmak ister misiniz?");
+        System.out.println("(y/n)");
 
-        klavye.close();
+        karar = klavye.next();
+
+        if (karar.equals("y")) 
+        {
+            System.out.println("Bağışınız başarıyla gerçekleşmiştir.Teşekkürler.İyi günler dileriz.");    
+        }
+        else
+        {
+            System.exit(0);
+        }
+        klavye.close(); 
+
+
     }
 }
 ```
