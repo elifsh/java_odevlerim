@@ -8,22 +8,22 @@ import java.lang.Math;
 public class Main
 {
 	public static void main(String[] args) {
-		double y;
-		double two_thirds = 2.0 / 3.0;
+        double y;
+        double two_thirds = 2.0 / 3.0;
 
         System.out.print(">>> ");
         Scanner sc = new Scanner(System.in);
         double x = sc.nextDouble();
         sc.close();
-        
+
         if (x < 0) {
-            y = two_thirds * Math.abs(x-1);   
+            y = two_thirds * Math.abs(x-1);
         } else if (x > 0) {
             y = two_thirds * Math.abs(x+1);
         } else {
             y = Math.sqrt(two_thirds);
         }
-        
+
         System.out.println("Fonksiyon Sonucu: " + y);
 	}
 }
@@ -39,14 +39,14 @@ public class Main
 {
     public static void main(String[] args) {
         double y;
-        
+
         System.out.print("1 adet x sayısı giriniz: ");
         Scanner sc = new Scanner(System.in);
         double x = sc.nextDouble();
         sc.close();
-        
+
         y = x - Math.pow(x, 3)/6 + Math.pow(x, 5)/120 - Math.pow(x, 7)/5040;
-        
+
         System.out.println("Fonksiyon Sonucu: " + y);
     }
 }
@@ -60,9 +60,9 @@ import java.lang.Math;
 
 public class Main
 {
-    public static void main(String[] args) {   
+    public static void main(String[] args) {
         double fx, gx;
-        
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Lütfen bir adet sayı giriniz: ");
         double x = sc.nextInt();
@@ -77,7 +77,7 @@ public class Main
             fx = f;
             gx = 1.0 / (f + x + Math.pow(x, 3));
         }
-        
+
         System.out.printf("f(%.2f) = %f\n", x, fx);
         System.out.printf("g(%.2f) = %f\n", x, gx);
     }
@@ -92,9 +92,9 @@ import java.lang.Math;
 
 public class Main
 {
-    public static void main(String[] args) throws Exception {   
+    public static void main(String[] args) throws Exception {
         double fx;
-        
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Lütfen bir sayı giriniz: ");
         double x = sc.nextDouble();
@@ -105,9 +105,9 @@ public class Main
         } else if (x >= 10.0 && x < 100.0) {
             fx = 3.0 / (2.0 * Math.pow(x, 2));
         } else {
-            fx = Math.pow(x-10, 2) / Math.pow(x, 3); 
+            fx = Math.pow(x-10, 2) / Math.pow(x, 3);
         }
-        
+
         System.out.printf("f(%.2f) = %.10f", x, fx);
     }
 }
