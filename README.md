@@ -7,7 +7,7 @@ import java.lang.Math;
 
 public class Main
 {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         double y;
         double two_thirds = 2.0 / 3.0;
 
@@ -25,7 +25,7 @@ public class Main
         }
 
         System.out.println("Fonksiyon Sonucu: " + y);
-	}
+    }
 }
 ```
 
