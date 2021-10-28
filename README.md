@@ -92,7 +92,7 @@ import java.lang.Math;
 
 public class Main
 {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         double fx;
 
         Scanner sc = new Scanner(System.in);
@@ -109,6 +109,48 @@ public class Main
         }
 
         System.out.printf("f(%.2f) = %.10f", x, fx);
+    }
+}
+```
+
+## 1.5 Bir bankada yapılan harcamaya göre kazanılan ekstra puanı hesaplayan program
+Program ilk olarak kullanıcıdan toplam harcama miktarını alacaktır. Bu miktara göre kazanılan puan aşağıdaki gibi hesaplanacaktır:
+
+- Toplam harcama 250'den küçük ise, her 50 TL başına 10p
+- Toplam harcama 250 ve 500 arasında ise, her 50 TL başına 15p
+- Toplam harcama 500'den büyük ise, her 50 TL başına 20p
+
+Kazanılan puan kullanıcıya iletildikten sonra, bu miktarı TEMA vakfına bağış yapabileceği hakkında kullanıcıya bilgi iletilecek, gelen cevaba göre puan miktarı bağışlanacaktır.
+
+```java
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Lütfen bankamızda şu zamana kadar yapmış olduğunuz toplam harcamayı giriniz: ");
+        int spent = sc.nextInt();
+
+        int score;
+        if (spent < 250) {
+            score = (spent / 50) * 10;
+        } else if (spent > 250 && spent < 500) {
+            score = (spent / 50) * 15;
+        } else {
+            score = (spent / 50) * 20;
+        }
+
+        System.out.printf("Kazandığınız miktar: %d TL'dir.\n", score);
+        System.out.print("Bu miktar ile TEMA vakfına bağışta bulunmak ister misiniz? (y/n): ");
+        String decision = sc.next();
+        sc.close();
+
+        if (decision.equals("y")) {
+            System.out.println("Bağışınız başarıyla gerçekleşmiştir. Teşekkürler. İyi günler dileriz.");
+        } else {
+            System.exit(0);
+        }
     }
 }
 ```
