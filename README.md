@@ -1,5 +1,5 @@
 # java_odevlerim
-#### 1-)Math işlevlerini kullanarak parçalı işlevi hesaplayan bir program yazın
+## 1.1 `Math` işlevlerini kullanarak parçalı işlevi hesaplayan bir program yazın
 ```java
 import java.util.Scanner;
 import java.lang.Math;
@@ -28,7 +28,7 @@ public class Main
 }
 
 ```
-#### 2-)Bir ondalık sayı (x) giren ve aşağıdaki formüle göre sonucu (y) bularak çıktıda veren programı yazınız.
+## 1.2 Bir ondalık sayı (x) giren ve aşağıdaki formüle göre sonucu (y) bularak çıktıda veren programı yazınız.
 ```java
 import java.util.Scanner;
 import java.lang.Math;
@@ -49,7 +49,7 @@ public class Main
     }
 } 
 ```
-#### 3-)x'in sıfırdan büyük veya sıfıra küçük eşit olma durumuna göre belirli f(x) ve g(x) fonksiyonlarının ekrana çıktılarını veren programı yazınız.
+## 1.3 x'in sıfırdan büyük veya sıfıra küçük eşit olma durumuna göre belirli f(x) ve g(x) fonksiyonlarının ekrana çıktılarını veren programı yazınız.
 ```java
 import java.util.Scanner;
 import java.lang.Math;
@@ -79,7 +79,7 @@ public class Main
     }
 }
 ```
-#### 4-)Girilen x değerlerine göre fx değerini hesaplayan programı yazınız.
+## 1.4 Girilen x değerlerine göre fx değerini hesaplayan programı yazınız.
 ```java
 import java.util.Scanner;
 import java.lang.Math;
@@ -112,7 +112,7 @@ public class Main
 }
 
 ```
-#### 5-)Bir bankada yapılan harcamaya göre kazanılan ekstra puanı hesaplayan bir program yazılacaktır.Program ilk olarak kullanıcıdan toplam harcama miktarını alacaktır.Bu miktara göre kazanılan puan aşağıdaki gibi hesaplanacaktır:
+## 1.5-)Bir bankada yapılan harcamaya göre kazanılan ekstra puanı hesaplayan bir program yazılacaktır.Program ilk olarak kullanıcıdan toplam harcama miktarını alacaktır.Bu miktara göre kazanılan puan aşağıdaki gibi hesaplanacaktır:
 ```
 --->Toplam harcama 250den küçük ise her 50 TL başına 10p
 --->Toplam harcama 250 ve 500 arasında ise her 50 TL başına 15p
