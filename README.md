@@ -11,7 +11,7 @@ public class Main
         double y;
         double two_thirds = 2.0 / 3.0;
 
-        System.out.print(">>> ");
+        System.out.print("Bir adet sayı giriniz: ");
         Scanner sc = new Scanner(System.in);
         double x = sc.nextDouble();
         sc.close();
@@ -158,11 +158,12 @@ public class Main
 
 ```java
 import java.util.Scanner;
+
 public class dders 
 {
-    public static void main(String[] args) 
-    {   
-        // Değişkenler tanımlandı.
+    public static void main(String[] args) {   
+       
+       // Değişkenler tanımlandı.
         int fib1 = 1;
         int fib2 = 1;
         int fib;
