@@ -159,7 +159,7 @@ public class Main
 ```java
 import java.util.Scanner;
 
-public class dders 
+public class Main 
 {
     public static void main(String[] args) {   
        
