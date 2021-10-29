@@ -154,3 +154,36 @@ public class Main
     }
 }
 ```
+## 1.6 Kullanıcıdan alınan sıra sayısı kadar fibonacci elemanlarını yazdıran program
+
+```java
+import java.util.Scanner;
+public class dders 
+{
+    public static void main(String[] args) 
+    {   
+        // Değişkenler tanımlandı.
+        int fib1 = 1;
+        int fib2 = 1;
+        int fib;
+
+        // Kullanıcıdan kaçıncı fibonacci dizisi elemanına kadar eleman istediğini belirtmesi amacıyla girdi alındı.
+        Scanner sc = new Scanner(System.in);
+        System.out.print("İstediğiniz n. fibonacci sayısını belirtiniz:");
+        fib = sc.nextInt();
+        sc.close();
+
+        // For döngüsü ile elemanları tek tek yazdırıp kullanıcının verdiği sıra sayısı kadar eleman yazdırması amaçlandı. 
+        for(int i=0; i<fib; i++){
+            System.out.print(fib1 + " ");
+
+            /* Aşağıdaki işlemde bir bellek değişkeni atandı.
+             * Bu bellek sürekli geçiçi olarak değiştirme usulü bir toplama işlemi hafızasına atıyor.
+               Çıktı verip bir sonraki toplamaya geçiyor. */
+            int sum = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = sum;
+        }
+    }    
+}
+```
