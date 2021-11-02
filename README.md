@@ -1,4 +1,5 @@
 # Java Ödevlerim
+
 ## 1.1 `Math` işlevlerini kullanarak parçalı işlevi hesaplayan program
 
 ```java
@@ -114,6 +115,7 @@ public class Main
 ```
 
 ## 1.5 Bir bankada yapılan harcamaya göre kazanılan ekstra puanı hesaplayan program
+
 Program ilk olarak kullanıcıdan toplam harcama miktarını alacaktır. Bu miktara göre kazanılan puan aşağıdaki gibi hesaplanacaktır:
 
 - Toplam harcama 250'den küçük ise, her 50 TL başına 10p
@@ -154,15 +156,16 @@ public class Main
     }
 }
 ```
+
 ## 1.6 Kullanıcıdan alınan sıra sayısı kadar fibonacci elemanlarını yazdıran program
 
 ```java
 import java.util.Scanner;
 
-public class Main 
+public class Main
 {
-    public static void main(String[] args) {   
-       
+    public static void main(String[] args) {
+
        // Değişkenler tanımlandı.
         int fib1 = 1;
         int fib2 = 1;
@@ -174,7 +177,7 @@ public class Main
         fib = sc.nextInt();
         sc.close();
 
-        // For döngüsü ile elemanları tek tek yazdırıp kullanıcının verdiği sıra sayısı kadar eleman yazdırması amaçlandı. 
+        // For döngüsü ile elemanları tek tek yazdırıp kullanıcının verdiği sıra sayısı kadar eleman yazdırması amaçlandı.
         for(int i=0; i<fib; i++){
             System.out.print(fib1 + " ");
 
@@ -185,55 +188,38 @@ public class Main
             fib1 = fib2;
             fib2 = sum;
         }
-    }    
+    }
 }
 ```
+
 ## 1.7 Girilen 1 ile 7 arasındaki değere göre hangi günde olduğumuzun çıktısını veren program
 
 ```java
 import java.util.Scanner;
-public class Main 
+
+public class Main
 {
+    // Girilen 1 ile 7 arasındaki değere göre hangi günde olduğumuzun çıktısını veren program
     public static void main(String[] args) {
-        
-        //Girilen 1 ile 7 arasındaki değere göre hangi günde olduğumuzun çıktısını veren program
 
         // Değişkenlerimizi tanımlıyoruz.
-        int gun;
-        //Girdiyi almak için scanner komudumuzu kullanıyoruz.
-        Scanner sc = new Scanner(System.in);
-        System.out.print("1 ile 7 arasında değer giriniz:");
-        gun = sc.nextInt();
-        sc.close();
-        //Switch-case yapısı ile koşulumuzu belirtiyoruz
-        switch (gun) {
-            case 1:
-                System.out.println("Bugün:PAZARTESİ");
-                break;
-            case 2:
-                System.out.println("Bugün:SALI");
-                break;
-            case 3:
-                System.out.println("Bugün:ÇARŞAMBA");
-                break;
-            case 4:
-                System.out.println("Bugün:PERŞEMBE");
-                break;
-            case 5:
-                System.out.println("Bugün:CUMA");
-                break;
-            case 6:
-                System.out.println("Bugün:CUMARTESİ");
-                break;
-            case 7:
-                System.out.println("Bugün:PAZAR");
-                break;
-            default:
-                System.out.println("Lütfen 1 ile 7 arasında bir değer giriniz!");
-                break;
-        }
+        int days_index;
+        String[] days = "Pazartesi,Salı,Çarşamba,Perşembe,Cuma,Cumartesi,Pazar".split(",");
 
+        // Girdiyi almak için scanner komudumuzu kullanıyoruz.
+        Scanner sc = new Scanner(System.in);
+        System.out.print("1 ile 7 arasında değer giriniz: ");
+        days_index = sc.nextInt();
+        sc.close();
+
+        // Kullanıcı girdisini `days` için bir indis olarak kullanıp gün değerini yazdırmaya çalışıyoruz.
+        // Eğer kullanıcı 1<=day<=7 aralığında bir sayı vermez ise ArrayIndexOutOfBoundsException'ı
+        // yakalıyoruz ve kullanıcıyı bu durum hakkında bilgilendiriyoruz.
+        try {
+            System.out.printf("Bugün %s\n", days[days_index-1]);
+        } catch(java.lang.ArrayIndexOutOfBoundsException ex) {
+            System.out.println("Lütfen 1 ile 7 arasında bir değer giriniz!");
+        }
     }
-    
 }
-``` 
+```
