@@ -188,3 +188,52 @@ public class Main
     }    
 }
 ```
+## 1.7 Girilen 1 ile 7 arasındaki değere göre hangi günde olduğumuzun çıktısını veren program
+
+```java
+import java.util.Scanner;
+public class hafta_gunleri 
+{
+    public static void main(String[] args) {
+        
+        //Girilen 1 ile 7 arasındaki değere göre hangi günde olduğumuzun çıktısını veren program
+
+        // Değişkenlerimizi tanımlıyoruz.
+        int gun;
+        //Girdiyi almak için scanner komudumuzu kullanıyoruz.
+        Scanner sc = new Scanner(System.in);
+        System.out.print("1 ile 7 arasında değer giriniz:");
+        gun = sc.nextInt();
+        sc.close();
+        //Switch-case yapısı ile koşulumuzu belirtiyoruz
+        switch (gun) {
+            case 1:
+                System.out.println("Bugün:PAZARTESİ");
+                break;
+            case 2:
+                System.out.println("Bugün:SALI");
+                break;
+            case 3:
+                System.out.println("Bugün:ÇARŞAMBA");
+                break;
+            case 4:
+                System.out.println("Bugün:PERŞEMBE");
+                break;
+            case 5:
+                System.out.println("Bugün:CUMA");
+                break;
+            case 6:
+                System.out.println("Bugün:CUMARTESİ");
+                break;
+            case 7:
+                System.out.println("Bugün:PAZAR");
+                break;
+            default:
+                System.out.println("Lütfen 1 ile 7 arasında bir değer giriniz!");
+                break;
+        }
+
+    }
+    
+}
+``` 
