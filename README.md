@@ -192,7 +192,7 @@ public class Main
 
 ```java
 import java.util.Scanner;
-public class hafta_gunleri 
+public class Main 
 {
     public static void main(String[] args) {
         
