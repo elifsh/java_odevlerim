@@ -165,12 +165,10 @@ import java.util.Scanner;
 public class Main
 {
     public static void main(String[] args) {
-
        // Değişkenler tanımlandı.
         int fib1 = 1;
         int fib2 = 1;
         int fib;
-
         // Kullanıcıdan kaçıncı fibonacci dizisi elemanına kadar eleman istediğini belirtmesi amacıyla girdi alındı.
         Scanner sc = new Scanner(System.in);
         System.out.print("İstediğiniz n. fibonacci sayısını belirtiniz:");
@@ -180,7 +178,6 @@ public class Main
         // For döngüsü ile elemanları tek tek yazdırıp kullanıcının verdiği sıra sayısı kadar eleman yazdırması amaçlandı.
         for(int i=0; i<fib; i++){
             System.out.print(fib1 + " ");
-
             /* Aşağıdaki işlemde bir bellek değişkeni atandı.
              * Bu bellek sürekli geçiçi olarak değiştirme usulü bir toplama işlemi hafızasına atıyor.
                Çıktı verip bir sonraki toplamaya geçiyor. */
@@ -219,6 +216,31 @@ public class Main
             System.out.printf("Bugün %s\n", days[days_index-1]);
         } catch(java.lang.ArrayIndexOutOfBoundsException ex) {
             System.out.println("Lütfen 1 ile 7 arasında bir değer giriniz!");
+        }
+    }
+}
+```
+## 1.8 Girilen x ve y değerlerine göre noktanın hangi bölgede bulunduğunun çıktısını veren program
+```java
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        //Klavyeden girilen x ve y koordinat noktasına göre koordinatın hangi bölgede yer aldığını bulan program
+        int x, y;
+        Scanner sc= new Scanner(System.in);
+        //x ve y değerlerini istiyoruz.
+        System.out.print("Lütfen koordinat sisteminde x'e karşılık gelen sayıyı yazınız:");
+        x = sc.nextInt();
+        System.out.print("Lütfen koordinat ekseninde y'ye karşılık gelen sayıyı yazınız:");
+        y = sc.nextInt();
+        sc.close();
+        //Koordinat ekseninde sıfırdan büyük veya küçük olma durumuna göre bölge analizi yapıyoruz.
+        if (x > 0) {
+            System.out.printf("(%d, %d): %d.BÖLGEDEDİR", x, y, ((y>0) ? 1:4));
+        } else if (x < 0) {
+            System.out.printf("(%d, %d): %d.BÖLGEDEDİR", x, y, ((y<0) ? 3:2));
+        } else {
+            System.out.printf("(%d, %d): ORİJİNDEDİR", x, y);
         }
     }
 }
