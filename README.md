@@ -245,3 +245,65 @@ public class Main {
     }
 }
 ```
+## 1.9 Bir tatlı üretim tesisinde yufka, ceviz ve şeker malzemeleri kullanılarak baklava üretimi yapılmaktadır. Her bir üretim 1 tepsi şeklindedir ve 1 tepsi icin 20 yufka, 3 ceviz ve 5 şeker kullanilir. Her üretim öncesinde eldeki malzemeler kontrol edilerek eğer yeterli ise üretimin yapılmasi, eğer degilse yeni malzeme satın alınıp alınmayacağı sorulur, eğer alınacaksa yeni malzeme miktarları klavyeden girilerek mevcut malzemelere eklenir ve yeniden üretime devam edilir. Eğer üretime devam edilmeyecek ise program sonlandırılır. Yukarıda belirtilen işlemleri aşagıdaki örnek ekran görüntüsüne göre gerçekleştiren java programı
+```java
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class tatlici
+{
+    private static HashMap<String, Integer> getIngredients(Scanner sc) {
+        HashMap<String, Integer> ingredients = new HashMap<String, Integer>();
+        String[] ingredient_names = {"yufka", "ceviz", "seker"};
+        
+        for (int i=0; i<ingredient_names.length; i++) {
+            System.out.printf("Lütfen %s miktarını giriniz: ", ingredient_names[i]);
+            ingredients.put(ingredient_names[i], sc.nextInt());
+        }
+        
+        return ingredients;
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int yufka = 0;
+        int ceviz = 0;
+        int seker = 0;
+        int iter  = 0;
+        
+        while (true) {
+            if (yufka >= 20 && ceviz >= 3 && seker >= 5) {
+                yufka -= 20;
+                ceviz -= 3;
+                seker -= 5;
+                iter  += 1;
+                
+                System.out.printf("%d. üretim gerçekleşti!\n", iter);
+            } else {
+                System.out.printf("Ürün miktarlarınız (yufka: %d/20, ceviz: %d/3, şeker: %d/5) 1 tepsi için yetersizdir.\n", yufka, ceviz, seker);
+                System.out.print("Malzeme eklemek ister misiniz? (E/H): ");
+                String decision = sc.next();
+                
+                switch (decision.toLowerCase()) {
+                    case "e":
+                        HashMap<String, Integer> ingredients = getIngredients(sc);
+                        yufka += ingredients.get("yufka");
+                        ceviz += ingredients.get("ceviz");
+                        seker += ingredients.get("seker");
+                        break;
+                        
+                    case "h":
+                        System.out.println("Daha fazla üretim yapmak istemiyorsunuz, programdan çıkış yapılıyor...");
+                        sc.close();
+                        System.exit(0);
+                        
+                    default:
+                        System.out.println("Lütfen geçerli bir seçenek giriniz!");
+                        break;
+                }
+            }
+        }
+    }
+}
+```
